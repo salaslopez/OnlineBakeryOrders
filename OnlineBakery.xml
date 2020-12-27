@@ -2,51 +2,62 @@
 <onlineOrder>
     <category name="Cakes">
         <product name="Carrot Cake">
-            <ingredient name="Eggs">
+            <ingredient>
+                <item>Eggs</item>
                 <quantity>3</quantity>
                 <unit>pc</unit>
             </ingredient>
-            <ingredient name="Sugar">
+            <ingredient>
+                <item>Sugar</item>
                 <quantity>200</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Carrots">
+            <ingredient>
+                <item>Carrots</item>
                 <quantity>400</quantity>
                 <unit>gr</unit>
             </ingredient>
         </product>
         <product name="Crumble Pie">
-            <ingredient name="Pie Shell">
+            <ingredient>
+                <item>Pie Shell</item>
                 <quantity>1</quantity>
                 <unit>pc</unit>
             </ingredient>
-            <ingredient name="Apples">
+            <ingredient>
+                <item>Apples</item>
                 <quantity>1</quantity>
                 <unit>kg</unit>
             </ingredient>
-            <ingredient name="Sugar">
+            <ingredient>
+                <item>Sugar</item>
                 <quantity>125</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Plain Flour">
+            <ingredient>
+                <item>Plain Flour</item>
                 <quantity>550</quantity>
                 <unit>gr</unit>
             </ingredient>
         </product>
         <product name="Red Velvet Cake">
-            <ingredient name="Buttermilk">
+            <ingredient>
+                <item>Buttermilk</item>
                 <quantity>240</quantity>
                 <unit>ml</unit>
             </ingredient>
-            <ingredient name="Sugar">
+            <ingredient>
+                <item>Sugar</item>
                 <quantity>1400</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Plain Flour">
+            <ingredient>
+                <item>Plain Flour</item>
                 <quantity>360</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Eggs">
+            <ingredient>
+                <item>Eggs</item>
                 <quantity>4</quantity>
                 <unit>pc</unit>
             </ingredient>
@@ -54,69 +65,84 @@
     </category>
     <category name="Small Cakes">
         <product name="Blueberry Muffin">
-            <ingredient name="Eggs">
+            <ingredient>
+                <item>Eggs</item>
                 <quantity>2</quantity>
                 <unit>pc</unit>
             </ingredient>
-            <ingredient name="Sugar">
+            <ingredient>
+                <item>Sugar</item>
                 <quantity>140</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Natural Yogurt">
+            <ingredient>
+                <item>Natural Yogurt</item>
                 <quantity>140</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Blueberries">
+            <ingredient>
+                <item>Blueberries</item>
                 <quantity>125</quantity>
                 <unit>gr</unit>
             </ingredient>
         </product>
         <product name="Chocolate Brownie (Minimum order: 16 pc)">
-            <ingredient name="Unsalted Butter">
+            <ingredient>
+                <item>Unsalted Butter</item>
                 <quantity>185</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Dark Chocolate">
+            <ingredient>
+                <item>Dark Chocolate</item>
                 <quantity>185</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Sugar">
+            <ingredient>
+                <item>Sugar</item>
                 <quantity>275</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Plain Flour">
+            <ingredient>
+                <item>Plain Flour</item>
                 <quantity>85</quantity>
                 <unit>gr</unit>
             </ingredient>
         </product>
         <product name="Dark Chocolate Macaron (Minimum order: 30 pcs)">
-            <ingredient name="Almond Flour">
+            <ingredient>
+                <item>Almond Flour</item>
                 <quantity>140</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Dark Chocolate">
+            <ingredient>
+                <item>Dark Chocolate</item>
                 <quantity>25</quantity>
                 <unit>gr</unit>
             </ingredient>
         </product>
         <product name="Gingerbread Man (Minimum order: 20 pcs)">
-            <ingredient name="Plain Flour">
+            <ingredient>
+                <item>Plain Flour</item>
                 <quantity>225</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Ground Ginger">
+            <ingredient>
+                <item>Ground Ginger</item>
                 <quantity>1</quantity>
                 <unit>tsp</unit>
             </ingredient>
-            <ingredient name="Unsalted Butter">
+            <ingredient>
+                <item>Unsalted Butter</item>
                 <quantity>50</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Brown Sugar">
+            <ingredient>
+                <item>Brown Sugar</item>
                 <quantity>100</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Golden Syrup">
+            <ingredient>
+                <item>Golden Syrup</item>
                 <quantity>100</quantity>
                 <unit>gr</unit>
             </ingredient>
@@ -124,85 +150,104 @@
     </category>
     <category name="Pastry">
         <product name="Croissant (Minimum order: 16 pcs)">
-            <ingredient name="Unsalted Butter">
+            <ingredient>
+                <item>Unsalted Butter</item>
                 <quantity>60</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Sugar">
+            <ingredient>
+                <item>Sugar</item>
                 <quantity>50</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Salt">
+            <ingredient>
+                <item>Salt</item>
                 <quantity>10</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="All-purpose Flour">
+            <ingredient>
+                <item>All-purpose Flour</item>
                 <quantity>500</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Milk">
+            <ingredient>
+                <item>Milk</item>
                 <quantity>360</quantity>
                 <unit>ml</unit>
             </ingredient>
         </product>
         <product name="Brown Scone (Minimum order: 12 pc)">
-            <ingredient name="Wholemeal Flour">
+            <ingredient>
+                <item>Wholemeal Flour</item>
                 <quantity>225</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Self-Raising Flour">
+            <ingredient>
+                <item>Self-Raising Flour</item>
                 <quantity>225</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Sugar">
+            <ingredient>
+                <item>Sugar</item>
                 <quantity>30</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Butter">
+            <ingredient>
+                <item>Butter</item>
                 <quantity>75</quantity>
                 <unit>gr</unit>
             </ingredient>
         </product>
         <product name="Pain Au Chocolate (Minimum order: 16 pc)">
-            <ingredient name="Unsalted Butter">
+            <ingredient>
+                <item>Unsalted Butter</item>
                 <quantity>60</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Milk">
+            <ingredient>
+                <item>Milk</item>
                 <quantity>360</quantity>
                 <unit>ml</unit>
             </ingredient>
-            <ingredient name="Sugar">
+            <ingredient>
+                <item>Sugar</item>
                 <quantity>50</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="All-purpose Flour">
+            <ingredient>
+                <item>All-purpose Flour</item>
                 <quantity>500</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Dark Chocolate">
+            <ingredient>
+                <item>Dark Chocolate</item>
                 <quantity>113</quantity>
                 <unit>gr</unit>
             </ingredient>
         </product>
         <product name="Raisin Danish (Minimum order: 24 pc)">
-            <ingredient name="All-purpose Flour">
+            <ingredient>
+                <item>All-purpose Flour</item>
                 <quantity>500</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Milk">
+            <ingredient>
+                <item>Milk</item>
                 <quantity>240</quantity>
                 <unit>ml</unit>
             </ingredient>
-            <ingredient name="Unsalted Butter">
+            <ingredient>
+                <item>Unsalted Butter</item>
                 <quantity>60</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Sugar">
+            <ingredient>
+                <item>Sugar</item>
                 <quantity>50</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Egg">
+            <ingredient>
+                <item>Eggs</item>
                 <quantity>1</quantity>
                 <unit>pc</unit>
             </ingredient>
@@ -210,85 +255,104 @@
     </category>
     <category name="Breads">
         <product name="Guinness Bread">
-            <ingredient name="Wholemeal Flour">
+            <ingredient>
+                <item>Wholemeal Flour</item>
                 <quantity>300</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Plain Flour">
+            <ingredient>
+                <item>Plain Flour</item>
                 <quantity>75</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Oats">
+            <ingredient>
+                <item>Oats</item>
                 <quantity>75</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Unsalted Butter">
+            <ingredient>
+                <item>Unsalted Butter</item>
                 <quantity>40</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Guinness Draught">
+            <ingredient>
+                <item>Guinness Draught</item>
                 <quantity>280</quantity>
                 <unit>ml</unit>
             </ingredient>
-            <ingredient name="Black Treacle">
+            <ingredient>
+                <item>Black Treacle</item>
                 <quantity>300</quantity>
                 <unit>gr</unit>
             </ingredient>
         </product>
         <product name="Ciabatta (Minimum order: 2 pcs)">
-            <ingredient name="Bread Flour">
+            <ingredient>
+                <item>Bread Flour</item>
                 <quantity>225</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Olive Oil">
+            <ingredient>
+                <item>Olive Oil</item>
                 <quantity>5</quantity>
                 <unit>ml</unit>
             </ingredient>
-            <ingredient name="Salt">
+            <ingredient>
+                <item>Salt</item>
                 <quantity>9</quantity>
                 <unit>gr</unit>
             </ingredient>
         </product>
         <product name="Large Sourdough">
-            <ingredient name="Strong White Flour">
+            <ingredient>
+                <item>Strong White Flour</item>
                 <quantity>1200</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Honey">
+            <ingredient>
+                <item>Honey</item>
                 <quantity>5</quantity>
                 <unit>ml</unit>
             </ingredient>
-            <ingredient name="Salt">
+            <ingredient>
+                <item>Salt</item>
                 <quantity>5</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Sourdough Starter">
+            <ingredient>
+                <item>Sourdough Starter</item>
                 <quantity>300</quantity>
                 <unit>gr</unit>
             </ingredient>
         </product>
         <product name="Brown Soda">
-            <ingredient name="Strong White Flour">
+            <ingredient>
+                <item>Strong White Flour</item>
                 <quantity>250</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Wholemeal Flour">
+            <ingredient>
+                <item>Wholemeal Flour</item>
                 <quantity>250</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Oats">
+            <ingredient>
+                <item>Oats</item>
                 <quantity>100</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Salt">
+            <ingredient>
+                <item>Salt</item>
                 <quantity>5</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Butter">
+            <ingredient>
+                <item>Butter</item>
                 <quantity>25</quantity>
                 <unit>gr</unit>
             </ingredient>
-            <ingredient name="Buttermilk">
+            <ingredient>
+                <item>Buttermilk</item>
                 <quantity>500</quantity>
                 <unit>ml</unit>
             </ingredient>
