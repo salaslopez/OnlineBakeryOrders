@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Zaray Salas Lopez-2018287</title>
+    <link href="img/zicon.png" rel="icon">
+    <link href="img/z-touch-icon.png" rel="apple-touch-icon">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i"
+        rel="stylesheet">
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/supplies.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <!-- Menu Bar -->
+    <header id="header" class="header">
+        <div class="container">
+
+            <div id="logo" class="pull-left">
+                <h1><a href="index.html"><span>online</span>Bakery Orders</a></h1>
+            </div>
+
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="menu-active"><a href="index.html">Home</a></li>
+
+                    <li><a href="#onlineBakery">Orders from the OnlineBakery</a></li>
+                    <li><a href="#preorder">Pre-Order for Supplier</a></li>
+                    <li class="menu-has-children"><a href="">Drop Down</a>
+                        <ul>
+                            <li><a href="#">Drop Down 1</a></li>
+                            <li><a href="#">Drop Down 3</a></li>
+                            <li><a href="#">Drop Down 4</a></li>
+                            <li><a href="#">Drop Down 5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#aboutme">About the App</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Welcome section -->
+
+    <section id="hero">
+        <div class="hero-container" data-aos="fade-in">
+            <h1>Welcome to Online Bakery Orders</h1>
+            <h2>The easiest way to order ingredientes for the Bakery requests &amp; more...</h2>
+            <img src="img/hero-img.png" alt="Hero Imgs" data-aos="zoom-out" data-aos-delay="100">
+        </div>
+    </section>
+
+    <main id="main">
+        <section id="onlineBakery" class="padd-section text-center">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title text-center">
+                    <h2>online bakery</h2>
+                    <p class="separator">This are the final products in the Online Bakery.</p>
+                </div>
+            </div>
+            <div class="container" data-aos="fade-up">
+
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                    <!-- Bakery From XML section -->
+                    <div id="results" class="col-lg-6 order-2 mb-5"></div>
+                    <!-- Bakery Delete/Add section -->
+                    <div class="col-lg-3 order-3">
+                        <h4>Here to add/delete final products to the table.</h4>
+                        <form enctype="application/json" action="/post/json" method="post">
+                            <div class="form-group">
+                                <select class="form-control" name="sec_n">
+                                    <option value="0">Cakes</option>
+                                    <option value="1">Small Cakes</option>
+                                    <option value="2">Pastry</option>
+                                    <option value="3">Bread</option>
+                                </select>
+                                <input class="form-control mt-3" type="text" name="item" placeholder="Item">
+                                <input class="form-control mt-3" type="text" name="ingredient" placeholder="Ingredient">
+                                <input class="form-control mt-3" type="text" name="quantity" placeholder="Quantity">
+                                <button type="submit" class="btn btn-success btn-block">Add a final
+                                    product</button>
+                                <p class="text-muted text-center">To delete an finalProduct, click the required row
+                                    first</p>
+                                <button id="delete" class=" btn btn-danger btn-block">Delete a final
+                                    product</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-3 order-1">
+                        <h4>Here to produce an order for the supplier.</h4>
+
+                        <form>
+                            <div class="input-group">
+
+                                <div class="input-group-append">
+                                    <p>To see the most popular products in the Online Bakery tick the box.</p>
+                                    <div class="input-group-text">
+                                        <input type="checkbox" id="mostwanted"
+                                            aria-label="Checkbox for following text input">
+                                    </div>
+                                </div>
+
+                                <form>
+                                    <select class="form-control mt-3" id="mySelect" onchange="myFunction()">
+                                        <option disabled selected value>Select an option</option>
+                                        <option>Flour</option>
+                                        <option>Pie Shell</option>
+                                        <option>Buttermilk</option>
+                                        <option>Apple</option>
+                                        <option>Eggs</option>
+                                        <option>Unsalted Butter</option>
+                                    </select>
+
+                                    <a class="btn btn-block" class="style="padding: 0%; href="#preorder">
+                                        <input class="btn btn-block btn-info" type="button" name="btnCalcBill"
+                                            value="Create Pre-Order" id="calcBill">
+                                    </a>
+                                </form>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SubMenus -->
+
+        <section id="preorder" class="padd-section text-center">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title text-center">
+
+                    <h2>Pre Order</h2>
+                    <p class="separator">This are the ingredientes that need to be order to bake the orders.</p>
+
+                </div>
+            </div>
+            <div class="container" data-aos="fade-up">
+
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="col-md-8 col-lg-7">
+                        <div class="block-pricing">
+                            <div class="table">
+                                <h4>This is the pre-order for the supplier of:</h4>
+                                <h2 id="ingredient"></h2>
+
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <form>
+                                            <input type="text" class="form-control" aria-label="Total"
+                                                name="txtBillAmt">
+                                        </form>
+                                        <p>GRMS</p>
+                                    </li>
+
+                                </ul>
+                                <div class="table_btn">
+                                    <a onclick="window.print()" href="#" class="btn btn-pricing" style="background: #71c55d;"><i
+                                            class="fa fa-shopping-cart"></i> Order Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </section>
+    </main>
+    <!-- Footer section -->
+    <footer id="aboutme" class="footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12 col-lg-4">
+                    <div class="footer-logo">
+
+                        <a class="navbar-brand" href="#">Online Bakery Orders</a>
+                        <p>It is an app that automatically collect the order made in the main page of the Bakary where
+                            the customer order. With that information a preorder is filled with the supplies needed to
+                            fulfill those orders.</p>
+
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-4">
+                    <div class="list-menu">
+
+                        <h4>About Me</h4>
+
+                        <ul class="list-unstyled">
+                            <li><a href="#">Student: ZARAY SALAS LOPEZ</a></li>
+                            <li><a href="#">Student Number: 2018287</a></li>
+                            <li><a href="#">Lecturer: Mikhail Timofeev</a></li>
+                            <li><a href="#">Lecture: Interactive Web Application</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <a href="#" class="back-to-top">UP</i></a>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/OnlineBakerytable.js"></script>
+    <script src="js/OnlineBakerySuppliers.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            document.forms[2].txtBillAmt.value = calculateBill('menuTable');
+
+            document.querySelector("#calcBill").addEventListener("click", function () {
+                document.forms[2].txtBillAmt.value = calculateBill('menuTable');
+
+            });
+            document.querySelector("#mostwanted").addEventListener("click", function () {
+                highlightMostwanted('menuTable', this.checked);
+            });
+        });
+    </script>
+</body>
+
+</html>
