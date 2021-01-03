@@ -1,5 +1,4 @@
-// returns a number that represents the sum of all the selected menu
-// item quantity.
+// <!-- Summary of the quantity in each finalProduct that were selected -->
 function calculateBill(idMenuTable) {
     var fBillTotal = 0.0;
     var i = 0;
@@ -15,7 +14,7 @@ function calculateBill(idMenuTable) {
             fBillTotal += parseFloat(oTDQuantity.firstChild.data);
         };
     };
-    // return the Quantity as a decimal number with 0 decimal places
+
     return Math.round(fBillTotal * 100) / 100;
 };
 
@@ -30,7 +29,7 @@ function highlightMostwanted(idTable, bShowVeg) {
     for (i = 0; i < aTRs.length; i++) {
         if (aTRs[i].getAttribute('mostwanted') == "true") {
             if (bShowVeg) {
-                aTRs[i].style.backgroundColor = "lightGreen";
+                aTRs[i].style.backgroundColor = "Green";
             } else {
                 aTRs[i].style.backgroundColor = "";
             };
@@ -39,7 +38,7 @@ function highlightMostwanted(idTable, bShowVeg) {
 };
 var chosenIngredient = "";
 
-
+// Take the value selected in the dropbox
 function myFunction() {
 var i = 0;
     var oTable = document.getElementById('menuTable');

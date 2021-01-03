@@ -1,17 +1,18 @@
-var http = require('http'), //This module provides the HTTP server functionalities
-    path = require('path'), //The path module provides utilities for working with file and directory paths
-    express = require('express'), //This module allows this app to respond to HTTP Requests, defines the routing and renders back the required content
-    fs = require('fs'), //This module allows to work witht the file system: read and write files back
-    xmlParse = require('xslt-processor').xmlParse, //This module allows us to work with XML files
-    xsltProcess = require('xslt-processor').xsltProcess, //The same module allows us to utilise XSL Transformations
-    xml2js = require('xml2js'); //This module does XML to JSON conversion and also allows us to get from JSON back to XML
+// Load and link information
+var http = require('http'),
+    path = require('path'),
+    express = require('express'),
+    fs = require('fs'),
+    xmlParse = require('xslt-processor').xmlParse,
+    xsltProcess = require('xslt-processor').xsltProcess,
+    xml2js = require('xml2js');
 
-var router = express(); //We set our routing to be handled by Express
-var server = http.createServer(router); //This is where our server gets created
+var router = express();
+var server = http.createServer(router);
 
-router.use(express.static(path.resolve(__dirname, 'views'))); //We define the views folder as the one where all static content will be served
-router.use(express.urlencoded({extended: true})); //We allow the data sent from the client to be coming in as part of the URL in GET and POST requests
-router.use(express.json()); //We include support for JSON that is coming from the client
+router.use(express.static(path.resolve(__dirname, 'front-end')));
+router.use(express.urlencoded({extended: true}));
+router.use(express.json());
 
 // Function to read in XML file and convert it to JSON
 function xmlFileToJs(filename, cb) {
@@ -39,17 +40,17 @@ router.get('/', function(req, res) {
 
 router.get('/get/html', function(req, res) {
 
-    res.writeHead(200, {'Content-Type': 'text/html'}); //We are responding to the client that the content served back is HTML and the it exists (code 200)
+    res.writeHead(200, {'Content-Type': 'text/html'});
 
-    var xml = fs.readFileSync('OnlineBakerySuppliers.xml', 'utf8'); //We are reading in the XML file
-    var xsl = fs.readFileSync('OnlineBakerySuppliers.xsl', 'utf8'); //We are reading in the XSL file
+    var xml = fs.readFileSync('OnlineBakerySuppliers.xml', 'utf8');
+    var xsl = fs.readFileSync('OnlineBakerySuppliers.xsl', 'utf8');
 
     var doc = xmlParse(xml); //Parsing our XML file
     var stylesheet = xmlParse(xsl); //Parsing our XSL file
 
     var result = xsltProcess(doc, stylesheet); //This does our XSL Transformation
 
-    res.end(result.toString()); //Send the result back to the user, but convert to type string first
+    res.end(result.toString()); //Send the result back to the user
 
 });
 

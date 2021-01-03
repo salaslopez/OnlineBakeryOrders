@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <onlineBakeryOrders>
+    <!-- The "onlinebakery" is divided in sections-->
   <section name="Cakes">
+      <!-- The "mostwanted" is an optional attribute, said if the product is a top seller -->
     <finalProduct>
       <item>Crumble Pie</item>
       <ingredient>Pie Shell</ingredient>
+      <!-- The "quantity" has the attribute which specify the unit of measure for that amount -->
       <quantity unit="pcs">1</quantity>
     </finalProduct>
     <finalProduct mostwanted="true">

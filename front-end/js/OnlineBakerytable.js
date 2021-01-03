@@ -1,3 +1,4 @@
+// Display the table in the HTML
 function draw_table()
 {
 	$("#results").empty();
@@ -17,7 +18,7 @@ function draw_table()
 	};
 	$.getJSONuncached("/get/html")
 };
-
+//<!-- This function takes the information provided when the row is selected and sends to the next function
 function select_row()
 {
 	$("#menuTable tbody tr[id]").click(function ()
@@ -29,7 +30,7 @@ function select_row()
 		delete_row(section, finalProduct);
 	})
 };
-
+//Send back to the fron-end the informationn after update it with the deleted one.
 function delete_row(sec, ent)
 {
 	$("#delete").click(function ()
@@ -48,7 +49,7 @@ function delete_row(sec, ent)
 		})
 	})
 };
-
+// Call the function that display the table in real-time without having to reload the page
 $(document).ready(function ()
 {
 	draw_table();

@@ -73,19 +73,23 @@
 
                 <div class="row" data-aos="fade-up" data-aos-delay="100">
 
-                    <!-- Bakery From XML section -->
+                    <!-- Bakery table From XML section -->
                     <div id="results" class="col-lg-6 order-2 mb-5"></div>
+                    <!-- If the user want to add a final product... -->
                     <!-- Bakery Delete/Add section -->
                     <div class="col-lg-3 order-3">
                         <h4>Here to add/delete final products to the table.</h4>
                         <form enctype="application/json" action="/post/json" method="post">
                             <div class="form-group">
+                                <!-- Select a section where the new finalProduct will be put -->
                                 <select class="form-control" name="sec_n">
+                                    <option disabled selected value>Select an option</option>
                                     <option value="0">Cakes</option>
                                     <option value="1">Small Cakes</option>
                                     <option value="2">Pastry</option>
                                     <option value="3">Bread</option>
                                 </select>
+                                <!-- Type the name, ingredient and quantity-->
                                 <input class="form-control mt-3" type="text" name="item" placeholder="Item">
                                 <input class="form-control mt-3" type="text" name="ingredient" placeholder="Ingredient">
                                 <input class="form-control mt-3" type="text" name="quantity" placeholder="Quantity">
@@ -100,10 +104,9 @@
                     </div>
                     <div class="col-lg-3 order-1">
                         <h4>Here to produce an order for the supplier.</h4>
-
+                        <!-- Function to highlight the product with more sales -->
                         <form>
                             <div class="input-group">
-
                                 <div class="input-group-append">
                                     <p>To see the most popular products in the Online Bakery tick the box.</p>
                                     <div class="input-group-text">
@@ -111,7 +114,7 @@
                                             aria-label="Checkbox for following text input">
                                     </div>
                                 </div>
-
+                                <!-- Select the ingredient that wants to be order from the list-->
                                 <form>
                                     <select class="form-control mt-3" id="mySelect" onchange="myFunction()">
                                         <option disabled selected value>Select an option</option>
@@ -122,8 +125,9 @@
                                         <option>Eggs</option>
                                         <option>Unsalted Butter</option>
                                     </select>
-
-                                    <a class="btn btn-block" class="style="padding: 0%; href="#preorder">
+                                    <!--To calculate the total of the ingredient needed to order -->
+                                    <!-- Press the button to fill an order and go to the order section-->
+                                    <a class="btn btn-block" class="style=" padding: 0%; href="#preorder">
                                         <input class="btn btn-block btn-info" type="button" name="btnCalcBill"
                                             value="Create Pre-Order" id="calcBill">
                                     </a>
@@ -134,8 +138,6 @@
                 </div>
             </div>
         </section>
-        <!-- SubMenus -->
-
         <section id="preorder" class="padd-section text-center">
             <div class="container" data-aos="fade-up">
                 <div class="section-title text-center">
@@ -165,9 +167,10 @@
                                     </li>
 
                                 </ul>
+                                <!-- Press the button to print the order -->
                                 <div class="table_btn">
-                                    <a onclick="window.print()" href="#" class="btn btn-pricing" style="background: #71c55d;"><i
-                                            class="fa fa-shopping-cart"></i> Order Now</a>
+                                    <a onclick="window.print()" href="#" class="btn btn-pricing"
+                                        style="background: #71c55d;"><i class="fa fa-shopping-cart"></i> Order Now</a>
                                 </div>
                             </div>
                         </div>
