@@ -1,5 +1,5 @@
 const http = require('http'),
-axios = require('axios'),
+//axios = require('axios'),
 logger = require('morgan'),
 cors = require('cors'),//Allows to use any browser
 express = require('express'),
@@ -14,7 +14,7 @@ dotenv.config();
 
 app.use(bodyParser.json());
 app.use(logger('tiny'));
-app.use(require('./routes'));
+//app.use(require('./routes'));//For Multer
 
 app.listen(port,function(err){
     console.log('Listening on port: ' + port);
