@@ -9,7 +9,7 @@ dotenv = require('dotenv');
 
 //------------Server-----------
 var app = express();
-var port = process.env.PORT || 8000;
+var port = 8000;//process.env.PORT || 8000;
 dotenv.config();
 
 app.use(bodyParser.json());
