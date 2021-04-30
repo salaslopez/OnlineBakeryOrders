@@ -1,9 +1,9 @@
 
 // Load and link information
 var http = require('http'),
-    path = require('path'),
+    //path = require('path'),
     express = require('express'),
-    fs = require('fs'),
+    //fs = require('fs'),
     xmlParse = require('xslt-processor').xmlParse,
     xsltProcess = require('xslt-processor').xsltProcess,
     xml2js = require('xml2js');
@@ -11,9 +11,9 @@ var http = require('http'),
 var router = express();
 var server = http.createServer(router);
 
-router.use(express.static(path.resolve(__dirname, 'front-end')));
-router.use(express.urlencoded({extended: true}));
-router.use(express.json());
+//router.use(express.static(path.resolve(__dirname, 'front-end')));
+//router.use(express.urlencoded({extended: true}));
+//router.use(express.json());
 
 // Function to read in XML file and convert it to JSON
 function xmlFileToJs(filename, cb) {
@@ -33,11 +33,9 @@ function jsToXmlFile(filename, obj, cb) {
   fs.writeFile(filepath, xml, cb);
 }
 
-router.get('/', function(req, res) {
-
-    res.render('index');
-
-});
+//router.get('/', function(req, res) {
+//    res.render('index');
+//});
 
 router.get('/get/html', function(req, res) {
 

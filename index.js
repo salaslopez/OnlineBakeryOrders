@@ -5,7 +5,8 @@ cors = require('cors'),//Allows to use any browser
 express = require('express'),
 bodyParser = require('body-parser'),
 mongoose = require('mongoose'),//Allows to connect to the DB
-dotenv = require('dotenv');
+dotenv = require('dotenv'),
+path = require('path');
 
 //------------Server-----------
 var app = express();
@@ -15,6 +16,14 @@ dotenv.config();
 app.use(bodyParser.json());
 app.use(logger('tiny'));
 app.use(require('./routes'));
+
+//Opening HTML-Online Bakery
+app.use(express.static(path.resolve(__dirname, 'front-end')));
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+app.get('/', function(req, res) {
+    res.render('index');
+});
 
 app.listen(port,function(err){
     console.log('Listening on port: ' + port);

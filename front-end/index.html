@@ -89,10 +89,21 @@
                                     <option value="2">Pastry</option>
                                     <option value="3">Bread</option>
                                 </select>
+                                <select class="form-control mt-3" name="mostwanted_n">
+                                    <option disabled selected value>Select an option</option>
+                                    <option value="0">true</option>
+                                    <option value="1">false</option>
+                                </select>
                                 <!-- Type the name, ingredient and quantity-->
                                 <input class="form-control mt-3" type="text" name="item" placeholder="Item">
                                 <input class="form-control mt-3" type="text" name="ingredient" placeholder="Ingredient">
                                 <input class="form-control mt-3" type="text" name="quantity" placeholder="Quantity">
+                                <select class="form-control mt-3" name="unit_n">
+                                    <option disabled selected value>Select an option</option>
+                                    <option value="0">pcs</option>
+                                    <option value="1">grs</option>
+                                    <option value="2">ml</option>
+                                </select>
                                 <button type="submit" class="btn btn-success btn-block">Add a final
                                     product</button>
                                 <p class="text-muted text-center">To delete an finalProduct, click the required row
