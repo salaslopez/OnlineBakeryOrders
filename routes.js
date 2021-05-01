@@ -26,5 +26,7 @@ router.get('/finalproductsby', function(req, res){
 
 router.put('/finalproducts/:id', finalproductCtrl.updateFinalProduct);
 router.delete('/finalproducts/:id', finalproductCtrl.deleteFinalProduct);
+//show what was searched in the html
+router.get('/searching',finalproductCtrl.showresults);
 
 module.exports = router;

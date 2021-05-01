@@ -13,10 +13,10 @@
     <link href="img/z-touch-icon.png" rel="apple-touch-icon">
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i"
-        rel="stylesheet">
+        rel="stylesheet" type="text/css">
 
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/supplies.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/supplies.css" rel="stylesheet" type="text/css">
 
 
 </head>
@@ -77,7 +77,7 @@
                     <div class="col-lg-6 order-2 mb-5">
                         <div>
                     <!-------------------- Table goes here ---------------------->
-                            <h4>Database here.....</h4>
+                            <h4>Result of the searching is .....</h4>
                             <table>
                                 <tbody>
                                     <tr>
@@ -85,16 +85,35 @@
                                         <th>_id</th>
                                         <th>section</th>
                                         <th>mostWanted</th>
+                                        <th>item</th>
                                         <th>ingredient</th>
                                         <th>quantity</th>
                                         <th>unit</th>
                                     </tr>
                                 </tbody>
-                            </table>
+                            
                         </div>
-                        <div id="tablewithall">
-                            <input id="search" type="search" placeholder="Search Craig's Jobs">
-                            <h2 id="tablewithall"></h2>
+                        <div id="results">
+                            <h2 id="results"></h2>
+                            
+                                <tbody>
+                                    
+                                        <% allproducts.forEach(function(entry) {%>
+                                            <tr>
+                                            <th><button id="delete" class=" btn btn-danger btn-block">Delete a final
+                                    product</button></th>  
+                                            <th><%= entry._id%></th>
+                                             <th><%=entry.section%></th>
+                                             <th><%=entry.mostWanted%></th>
+                                             <th><%=entry.item%></th>
+                                             <th><%=entry.ingredient%></th>
+                                             <th><%=entry.quantity%></th>
+                                             <th><%=entry.unit%></th>
+                                             </tr>
+                                            <%});%>
+                                    
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <!-- If the user want to add a final product... -->
@@ -148,11 +167,8 @@
                                     </div>
                                 </div>
                                 <!-- Select the ingredient that wants to be order from the list-->
-                                
-                                    <input class="form-control mt-3" type="text" name="ingredient"
-                                        placeholder="ingredient">
-                                    <input class="btn btn-block btn-info" type="submit" id="searchby" value="Enter Info"></input>
-                            
+                                <input class="form-control mt-3" id="search" type="search" placeholder="Search by...">
+                                <input class="btn btn-block btn-info" type="submit" id="searchby" value="Search data"></input>
                                 <form>
 
                                     <select class="form-control mt-3" id="mySelect" onchange="myFunction()">
@@ -260,7 +276,7 @@
     <!-- Bootstrap core JavaScript -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <!-- <script src="js/OnlineBakerytable.js"></script> -->
+    <script src="js/OnlineBakerytable.js"></script>
     <script src="js/main.js"></script>
     <!--<script>
         window.addEventListener("load", function () {

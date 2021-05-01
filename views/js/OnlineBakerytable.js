@@ -1,34 +1,36 @@
 $(function(){
- $('#search').on('keyup', function(e){
-   $( "#searchby" ).click(function() {
-  alert( "Handler for .click() called." );
-     var parameters = { search: $(this).val() };
+ $(document).ready(function(e){//The key from the keyboard is lifted
+   $( "#searchby" ).click(function() {//When the button is clicked
+  //alert( "Handler for .click() called." );
+     var parameters = { search: $(this).val() };//search:Search data
+     console.log("parameters: " + parameters);
        $.get( '/searching',parameters, function(data) {
-       $('#results').html(data);
+       $('#results').html(data);//Place to put the result
+       console.log("data: " + data);
      });
     });
  });
 });
 //Display the table in the HTML
-function draw_table()
-{
-	//$("#tablewithall").empty();
-	$.getJSONuncached = function (url)
-	{
-		return $.ajax(
-		{
-			url: url,
-			type: 'GET',
-			cache: false,
-			success: function (html)
-			{
-				$("#tablewithall").append(html);
-				select_row();
-			}
-		});
-	};
-	$.getJSONuncached("/finalproducts")
-};
+// function draw_table()
+// {
+// 	//$("#tablewithall").empty();
+// 	$.getJSONuncached = function (url)
+// 	{
+// 		return $.ajax(
+// 		{
+// 			url: url,
+// 			type: 'GET',
+// 			cache: false,
+// 			success: function (html)
+// 			{
+// 				$("#tablewithall").append(html);
+// 				select_row();
+// 			}
+// 		});
+// 	};
+// 	$.getJSONuncached("/finalproducts")
+// };
 //<!-- This function takes the information provided when the row is selected and sends to the next function
 // function select_row()
 // {
@@ -61,7 +63,7 @@ function draw_table()
 // 	})
 // };
 // // Call the function that display the table in real-time without having to reload the page
-$(document).ready(function ()
-{
-	draw_table();
-});
+// $(document).ready(function ()
+// {
+// 	draw_table();
+// });
