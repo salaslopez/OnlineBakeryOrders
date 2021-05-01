@@ -28,12 +28,12 @@
         <div class="container">
 
             <div id="logo" class="pull-left">
-                <h1><a href="index.html"><span>online</span>Bakery Orders</a></h1>
+                <h1><a href="index.ejs"><span>online</span>Bakery Orders</a></h1>
             </div>
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li class="menu-active"><a href="index.html">Home</a></li>
+                    <li class="menu-active"><a href="index.ejs">Home</a></li>
 
                     <li><a href="#onlineBakery">Orders from the OnlineBakery</a></li>
                     <li><a href="#preorder">Pre-Order for Supplier</a></li>
@@ -75,30 +75,33 @@
 
                     <!-- Bakery table From XML section -->
                     <div class="col-lg-6 order-2 mb-5">
-                        <h4>Database here.....</h4>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th>Ordered</th>
-                                    <th>_id</th>
-                                    <th>section</th>
-                                    <th>mostWanted</th>
-                                    <th>ingredient</th>
-                                    <th>quantity</th>
-                                    <th>unit</th>
-                                </tr>
-                            </tbody>
-                            <tr>
-                                <div id="results"></div>
-                            </tr>
-                        </table>
-                    
+                        <div>
+                    <!-------------------- Table goes here ---------------------->
+                            <h4>Database here.....</h4>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>Ordered</th>
+                                        <th>_id</th>
+                                        <th>section</th>
+                                        <th>mostWanted</th>
+                                        <th>ingredient</th>
+                                        <th>quantity</th>
+                                        <th>unit</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="tablewithall">
+                            <input id="search" type="search" placeholder="Search Craig's Jobs">
+                            <h2 id="tablewithall"></h2>
+                        </div>
                     </div>
                     <!-- If the user want to add a final product... -->
                     <!-- Bakery Delete/Add section -->
                     <div class="col-lg-3 order-3">
                         <h4>Here to add/delete final products to the table.</h4>
-                        <form enctype="application/json" action="/post/json" method="post">
+                        <form>
                             <div class="form-group">
                                 <!-- Select a section where the new finalProduct will be put -->
                                 <select class="form-control" name="sec_n">
@@ -135,7 +138,7 @@
                     <div class="col-lg-3 order-1">
                         <h4>Here to produce an order for the supplier.</h4>
                         <!-- Function to highlight the product with more sales -->
-                        <form>
+                        
                             <div class="input-group">
                                 <div class="input-group-append">
                                     <p>To see the most popular products in the Online Bakery tick the box.</p>
@@ -145,12 +148,13 @@
                                     </div>
                                 </div>
                                 <!-- Select the ingredient that wants to be order from the list-->
-                                <form enctype="application/x-www-form-urlencoded" method="post" action="/finalproductsby">
-                                    <input class="form-control mt-3" type="text" name="ingredient" placeholder="ingredient">
-                                    <input  class="btn btn-block btn-info" type="submit" value="Enter Info"></input>
-                                    </form>
-                                    <form>
-                                    
+                                
+                                    <input class="form-control mt-3" type="text" name="ingredient"
+                                        placeholder="ingredient">
+                                    <input class="btn btn-block btn-info" type="submit" id="searchby" value="Enter Info"></input>
+                            
+                                <form>
+
                                     <select class="form-control mt-3" id="mySelect" onchange="myFunction()">
                                         <option disabled selected value>Select an option</option>
                                         <option>Flour</option>
@@ -168,7 +172,7 @@
                                     </a>
                                 </form>
                             </div>
-                        </form>
+                        
                     </div>
                 </div>
             </div>
@@ -256,10 +260,9 @@
     <!-- Bootstrap core JavaScript -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/OnlineBakerytable.js"></script>
-    <script src="js/OnlineBakerySuppliers.js"></script>
+    <!-- <script src="js/OnlineBakerytable.js"></script> -->
     <script src="js/main.js"></script>
-    <script>
+    <!--<script>
         window.addEventListener("load", function () {
             document.forms[2].txtBillAmt.value = calculateBill('menuTable');
 
@@ -271,7 +274,7 @@
                 highlightMostwanted('menuTable', this.checked);
             });
         });
-    </script>
+    </script>-->
 </body>
 
 </html>
