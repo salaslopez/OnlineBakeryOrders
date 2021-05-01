@@ -16,7 +16,7 @@ function draw_table()
 			}
 		});
 	};
-	$.getJSONuncached("/get/html")
+	$.getJSONuncached("/")
 };
 //<!-- This function takes the information provided when the row is selected and sends to the next function
 function select_row()

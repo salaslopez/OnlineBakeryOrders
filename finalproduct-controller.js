@@ -18,18 +18,20 @@ exports.getFinalProducts = function(req, res){
             res.status(400).json(err);
         }
         res.json(finalproducts);
+        console.log("finalproducts from finalproduct-controller: " + finalproducts);
     });
 };
 
-//------------Get a single finalproduct----------------------
+//------------Get a item with the ingredient of your chosen in the url----------------------
 exports.getFinalProduct = function(req, res){
-    FinalProduct.findOne({_id: req.params.id}, function(err, finalproducts){
+    FinalProduct.findOne({ingredient: req.params.ingredient}, function(err, finalproducts){
         if(err){
             res.status(400).json(err);
         }
         res.json(finalproducts);
     });
 };
+
 
 //-------------Updating finalproduct based on ID -----------------
 exports.updateFinalProduct = function(req, res){
