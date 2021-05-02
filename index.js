@@ -21,20 +21,16 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: false}));
 app.use(express.static('views'));//Opening HTML-Online Bakery
 
+//Capture all the data in DB
 app.get('/', async function(req, res) {
-    console.log("HELLO FROM INDEX");
     const allproducts = await FinalProduct.find();
     res.render('index',{allproducts: allproducts});
-    console.log("allproducts: " + allproducts);
 });
 
 //------------Server-----------
 
 var port = process.env.PORT || 8000;
 dotenv.config();
-
-
-
 app.listen(port,function(err){
     console.log('Listening on port: ' + port);
 });
