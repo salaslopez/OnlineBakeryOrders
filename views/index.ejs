@@ -61,7 +61,7 @@
         </div>
     </section>
 
-    <main id="main">
+    <main id="main" >
         <section id="onlineBakery" class="padd-section text-center">
             <div class="container" data-aos="fade-up">
                 <div class="section-title text-center">
@@ -69,39 +69,35 @@
                     <p class="separator">This are the final products in the Online Bakery.</p>
                 </div>
             </div>
-            <div data-aos="fade-up">
+            <div class="container" data-aos="fade-up">
 
                 <div class="row" data-aos="fade-up" data-aos-delay="100">
 
                     <!-- Bakery table From XML section -->
-                    <div class="col-lg-6 order-2 mb-5">
+                    <div class="col-lg-8 order-2 mb-5">
                         <div>
                             <!-------------------- Table goes here ---------------------->
-                            <h4>Result of the searching is .....</h4>
+                            <h4>Bakery database...</h4>
                             <table>
                                 <tr>
                                     <th>Ordered</th>
                                     <th>_id</th>
-                                    <th>section</th>
-                                    <th>mostWanted</th>
-                                    <th>item</th>
-                                    <th>ingredient</th>
-                                    <th>quantity</th>
-                                    <th>unit</th>
+                                    <th>Section</th>
+                                    <th>Item</th>
+                                    <th>Ingredient</th>
+                                    <th>Quantity</th>
+                                    <th>Unit</th>
                                 </tr>
                                 
                                 <tbody id="bakeryDB">
                                 <% allproducts.forEach(function(entry) {%>
-                                <tr>
-                                    <th><input type="checkbox" id="mostwanted" aria-label="Checkbox for following text input"></th>
-                                    <th>
+                                <tr id="mostWanted<%=entry.mostWanted%>">
+                                    <th><input type="checkbox" id="orderedcheckbox"></th>
+                                    <th class="maintableinput">
                                         <p><%= entry._id%></p>
                                     </th>
                                     <th>
                                         <p><%=entry.section%></p>
-                                    </th>
-                                    <th>
-                                        <p><%=entry.mostWanted%></p>
                                     </th>
                                     <th>
                                         <p><%=entry.item%></p>
@@ -110,20 +106,62 @@
                                         <p><%=entry.ingredient%></p>
                                     </th>
                                     <th>
-                                        <p><%=entry.quantity%></p>
+                                        <input class="miniinput" type='number' id="quantity" value='<%=entry.quantity%>' disabled/>
+                                        
                                     </th>
                                     <th>
                                         <p><%=entry.unit%></p>
                                     </th>
+                                    <th>
+                                    <button class="btn btn-danger" style="padding: 8px;" type="submit">Delete</button>
+                                </th>
                                 </tr>
                                 <%});%>
                             </tbody>
                             </table>
                         </div>
                     </div>
-                    <!-- If the user want to add a final product... -->
-                    <!-- Bakery Delete/Add section -->
-                    <div class="col-lg-3 order-3">
+                    
+                    
+                    <div class="col-lg-4 order-1">
+                        <h4>Here to produce an order for the supplier.</h4>
+                        <!-- Function to highlight the product with more sales -->
+                    
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <p>To see the most popular products in the Online Bakery tick the box.</p>
+                                <div class="input-group-text">
+                                    <input type="checkbox" id="mostWantedCheckbox" onclick="mostWantedHighlight()">
+                                    
+                                </div>
+                            </div>
+                           <p> Search by any word within the table</p>
+                            <div>
+                                <input class="form-control" id="search" type="search" placeholder="Write here">
+                            </div>
+                            
+                            
+                            <form>
+                    <!-- Select the ingredient that wants to be order from the list-->
+                                <select class="form-control mt-3" id="mySelect" onchange="myFunction()">
+                                    <option disabled selected value>Select an option</option>
+                                    <option>Flour</option>
+                                    <option>Pie Shell</option>
+                                    <option>Buttermilk</option>
+                                    <option>Apple</option>
+                                    <option>Eggs</option>
+                                    <option>Unsalted Butter</option>
+                                </select>
+                                <!--To calculate the total of the ingredient needed to order -->
+                                <!-- Press the button to fill an order and go to the order section-->
+                                <a class="btn btn-block" class="style=" padding: 0%; href="#preorder">
+                                    <input class="btn btn-block btn-info" type="button" name="btnCalcBill" value="Create Pre-Order"
+                                        id="calcBill">
+                                </a>
+                            </form>
+                        </div>
+                        <!-- If the user want to add a final product... -->
+                        <!-- Bakery Delete/Add section -->
                         <h4>Here to add/delete final products to the table.</h4>
                         <form>
                             <div class="form-group">
@@ -159,43 +197,6 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-lg-3 order-1">
-                        <h4>Here to produce an order for the supplier.</h4>
-                        <!-- Function to highlight the product with more sales -->
-                    
-                        <div class="input-group">
-                            <div class="input-group-append">
-                                <p>To see the most popular products in the Online Bakery tick the box.</p>
-                                <div class="input-group-text">
-                                    <input type="checkbox" id="mostwanted" aria-label="Checkbox for following text input">
-                                </div>
-                            </div>
-                           <p> Search by any word within the table</p>
-                            <div>
-                                <input class="form-control" id="search" type="search" placeholder="Write here">
-                            </div>
-                            
-                            
-                            <form>
-                    <!-- Select the ingredient that wants to be order from the list-->
-                                <select class="form-control mt-3" id="mySelect" onchange="myFunction()">
-                                    <option disabled selected value>Select an option</option>
-                                    <option>Flour</option>
-                                    <option>Pie Shell</option>
-                                    <option>Buttermilk</option>
-                                    <option>Apple</option>
-                                    <option>Eggs</option>
-                                    <option>Unsalted Butter</option>
-                                </select>
-                                <!--To calculate the total of the ingredient needed to order -->
-                                <!-- Press the button to fill an order and go to the order section-->
-                                <a class="btn btn-block" class="style=" padding: 0%; href="#preorder">
-                                    <input class="btn btn-block btn-info" type="button" name="btnCalcBill" value="Create Pre-Order"
-                                        id="calcBill">
-                                </a>
-                            </form>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -220,9 +221,9 @@
 
                                 <ul class="list-unstyled">
                                     <li>
-                                        <form>
-                                            <input type="text" class="form-control" aria-label="Total"
-                                                name="txtBillAmt">
+                                        <form></form>
+                                            <input type="number" class="form-control" aria-label="Total"
+                                                id="totalOrdered">
                                         </form>
                                         <p>GRMS</p>
                                     </li>

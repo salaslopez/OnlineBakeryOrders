@@ -1,8 +1,25 @@
 @charset "UTF-8";
+.highlight{
+    background-color: #92d283;
+
+}
+.miniinput{
+    background-color: transparent;
+    border-color: transparent;
+    padding: 0%;
+    width: 50px;
+    font-size: 13px;
+}
+.maintableinput{
+    padding: 5px;
+}
+.minibtn{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
 table, th, td {
      border-collapse: collapse;
-     border: 1px solid #ced4da;
-     
+     border: 1px solid #ced4da;  
 }
  table {
      border-collapse: collapse;

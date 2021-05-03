@@ -17,7 +17,7 @@ var finalproductSchema = new mongoose.Schema({
     quantity: Number,
     unit: {
         type: String,
-        enum: ['pcs', 'grs', 'lt', 'kg']
+        enum: ['pcs', 'grs', 'ml']
     },
     
 },
