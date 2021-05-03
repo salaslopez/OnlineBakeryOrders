@@ -1,5 +1,11 @@
 //Functions define in "routes.js"
 var FinalProduct = require('./models/finalproduct');
+
+//Capture all the data in DB
+exports.index = async function(req, res) {
+    const allproducts = await FinalProduct.find();
+    res.render('index',{allproducts: allproducts});
+};
 //-------------Create-----------------
 exports.createFinalProduct = function(req, res){
     var newfinalproduct = new FinalProduct(req.body);
@@ -9,6 +15,23 @@ exports.createFinalProduct = function(req, res){
         }
         res.json(finalproduct);
     });
+};
+
+exports.createProduct = function(req, res){
+    var finalproduct = new FinalProduct();
+    finalproduct.section = req.body.section;
+    finalproduct.mostWanted = req.body.mostwanted;
+    finalproduct.item = req.body.item;
+    finalproduct.ingredient = req.body.ingredient;
+    finalproduct.quantity = req.body.quantity;
+    finalproduct.unit = req.body.unit;
+    finalproduct.save(function(err){
+            if(err){
+                console.log(err);
+                return;
+            }
+            res.redirect('/');
+        });
 };
 
 //-------------Get all finalproducts-------------------
@@ -31,20 +54,6 @@ exports.getFinalProduct = function(req, res){
         res.json(finalproducts);
     });
 };
-
-// Show the result of the search in the html
-// exports.showresults = function(req, res){
-//     var val = req.query.search;//Value in the box
-//     console.log(val);
-//     FinalProduct.find({ingredient: val}, function(err, finalproducts){
-//         if(err){
-//             res.status(400).json(err);
-//         }else{
-//         res.json({allproducts: finalproducts});
-//         console.log("allproducts: " + finalproducts);
-//         }
-//     });
-// };
 
 //-------------Updating finalproduct based on ID -----------------
 exports.updateFinalProduct = function(req, res){

@@ -12,20 +12,15 @@ var FinalProduct = require('./models/finalproduct');
 var app = express();
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger('tiny'));
 
 
 app.use(express.json());
-app.set('view engine', 'ejs');
-app.use(express.urlencoded({extended: false}));
-app.use(express.static('views'));//Opening HTML-Online Bakery
-
-//Capture all the data in DB
-app.get('/', async function(req, res) {
-    const allproducts = await FinalProduct.find();
-    res.render('index',{allproducts: allproducts});
-});
+//Opening HTML-Online Bakery
+app.set('views', (path.join(__dirname,'views')));
+app.set('view engine','ejs');
+app.use(express.static('views'));
 
 //------------Server-----------
 
