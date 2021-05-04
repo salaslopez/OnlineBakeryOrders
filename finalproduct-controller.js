@@ -66,6 +66,35 @@ exports.updateFinalProduct = function(req, res){
     });
 };
 
+exports.loadform = function(req, res){
+    FinalProduct.findById(req.params.id, function(error, article){
+        res.render('updateproduct',{
+            article:article
+        });
+    });
+};
+exports.updateProduct = function(req, res){
+    var article = {};
+    article.section = req.body.section;
+    article.mostWanted = req.body.mostwanted;
+    article.item = req.body.item;
+    article.ingredient = req.body.ingredient;
+    article.quantity = req.body.quantity;
+    article.unit = req.body.unit;
+console.log(article);
+//var checkId = {_id: new mongodb.ObjectID(req.params.id)};
+    var checkId = {_id: req.params.id};
+    console.log(checkId);
+
+    FinalProduct.update(checkId, article, function(err){
+            if(err){
+                console.log(err);
+                return;
+            }
+            res.redirect('/');
+        });
+};
+
 //---------------Deleting finalproduct by ID-----------------------------
 exports.deleteFinalProduct = function(req, res){
     FinalProduct.findByIdAndRemove({_id: req.params.id}, function(err, finalproducts){

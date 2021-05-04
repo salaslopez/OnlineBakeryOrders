@@ -3,64 +3,12 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Zaray Salas Lopez-2018287</title>
-    <link href="img/zicon.png" rel="icon">
-    <link href="img/z-touch-icon.png" rel="apple-touch-icon">
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i"
-        rel="stylesheet" type="text/css">
-
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="css/supplies.css" rel="stylesheet" type="text/css">
-
-
+<%- include('../views/head'); %>
 </head>
 
 <body>
-
-    <!-- Menu Bar -->
-    <header id="header" class="header">
-        <div class="container">
-
-            <div id="logo" class="pull-left">
-                <h1><a href="index.ejs"><span>online</span>Bakery Orders</a></h1>
-            </div>
-
-            <nav id="nav-menu-container">
-                <ul class="nav-menu">
-                    <li class="menu-active"><a href="index.ejs">Home</a></li>
-
-                    <li><a href="#onlineBakery">Orders from the OnlineBakery</a></li>
-                    <li><a href="#preorder">Pre-Order for Supplier</a></li>
-                    <li class="menu-has-children"><a href="">Drop Down</a>
-                        <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
-                            <li><a href="#">Drop Down 5</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#aboutme">About the App</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Welcome section -->
-
-    <section id="hero">
-        <div class="hero-container" data-aos="fade-in">
-            <h1>Welcome to Online Bakery Orders</h1>
-            <h2>The easiest way to order ingredientes for the Bakery requests &amp; more...</h2>
-            <img src="img/hero-img.png" alt="Hero Imgs" data-aos="zoom-out" data-aos-delay="100">
-        </div>
-    </section>
-
+<%- include('../views/body'); %>
+    
     <main id="main">
         <section id="onlineBakery" class="padd-section text-center">
             <div class="container" data-aos="fade-up">
@@ -114,8 +62,9 @@
                                             <p><%=entry.unit%></p>
                                         </th>
                                         <th>
-                                            <button class="btn btn-danger" style="padding: 8px;"
-                                                type="submit">Delete</button>
+                                            <button class="btn btn-danger" style="padding: 8px;" type="submit">Delete</button>
+                                        <th>
+                                            <button class="btn btn-default" style="padding: 8px;" type="submit"><a href="/article/edit/<%= entry._id%>">Update</a></button>
                                         </th>
                                     </tr>
                                     <%});%>
@@ -139,7 +88,7 @@
                             </div>
                             <p> Search by any word within the table</p>
                             <div>
-                                <input class="form-control mt-3" id="search" type="search" placeholder="Write here">
+                                <input class="form-control mt-3" id="search" type="text" placeholder="Write here">
                             </div>
 
 
@@ -176,7 +125,7 @@
                             <input class="form-control mt-3" type="text" name="ingredient" placeholder="Ingredient">
                             <input class="form-control mt-3" type="text" name="quantity" placeholder="Quantity">
                             <input class="form-control mt-3" type="unit" name="unit" placeholder="Unit">
-                            <input type="submit" class="btn btn-success btn-block" value="Add a product">
+                            <input type="submit" class="btn btn-success btn-block createproduct" value="Add a product">
                             <p class="text-muted text-center">To delete an finalProduct, click the required row
                                 first</p>
                             <button id="delete" class=" btn btn-danger btn-block">Delete a final
@@ -229,61 +178,5 @@
 
         </section>
     </main>
-    <!-- Footer section -->
-    <footer id="aboutme" class="footer">
-        <div class="container">
-            <div class="row">
 
-                <div class="col-md-12 col-lg-4">
-                    <div class="footer-logo">
-
-                        <a class="navbar-brand" href="#">Online Bakery Orders</a>
-                        <p>It is an app that automatically collect the order made in the main page of the Bakary where
-                            the customer order. With that information a preorder is filled with the supplies needed to
-                            fulfill those orders.</p>
-
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-6 col-lg-4">
-                    <div class="list-menu">
-
-                        <h4>About Me</h4>
-
-                        <ul class="list-unstyled">
-                            <li><a href="#">Student: ZARAY SALAS LOPEZ</a></li>
-                            <li><a href="#">Student Number: 2018287</a></li>
-                            <li><a href="#">Lecturer: Mikhail Timofeev</a></li>
-                            <li><a href="#">Lecture: Interactive Web Application</a></li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </footer>
-
-    <a href="#" class="back-to-top">UP</i></a>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/OnlineBakerytable.js"></script>
-    <script src="js/main.js"></script>
-    <!--<script>
-        window.addEventListener("load", function () {
-            document.forms[2].txtBillAmt.value = calculateBill('menuTable');
-
-            document.querySelector("#calcBill").addEventListener("click", function () {
-                document.forms[2].txtBillAmt.value = calculateBill('menuTable');
-
-            });
-            document.querySelector("#mostwanted").addEventListener("click", function () {
-                highlightMostwanted('menuTable', this.checked);
-            });
-        });
-    </script>-->
-</body>
-
-</html>
+ <%- include('../views/footer'); %>

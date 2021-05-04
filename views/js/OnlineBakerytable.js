@@ -1,12 +1,13 @@
 //Hide all the rows that do not match with the word typed in the textbox
-var $rows = $('#bakeryDB tr');
+var $maintable = $('#bakeryDB tr');
 $('#search').keyup(function() {//With every letter the search react
     var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
     
-    $rows.show().filter(function() {
+    $maintable.show().filter(function() {
         var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
         return !~text.indexOf(val);
     }).hide();
+    
 });
 //Function to highlight all the products with MOST WANTED attribute as true.
 function mostWantedHighlight() {
@@ -22,17 +23,4 @@ function mostWantedHighlight() {
             text[i].classList.remove("highlight");
         }
     }
-}
-
-function summatory() {
-    var orderedcheckbox = document.getElementById("bakeryDB").querySelectorAll('input:checked');
-    var i;
-    var total = 0;
-        for (i = 0; i < orderedcheckbox.length; i++) {
-            total += total + document.getElementById(quantity).value;
-           document.getElementById("quantity").classList.add("highlight");
-        }
-        document.getElementById('totalOrdered').value = total;
-return total;
-        
 }
