@@ -20,8 +20,7 @@ router.post('/articles/edit/:id', finalproductCtrl.updateProduct);
 
 router.put('/finalproducts/:id', finalproductCtrl.updateFinalProduct);
 router.delete('/finalproducts/:id', finalproductCtrl.deleteFinalProduct);
-//show what was searched in the html
-//router.get('/searching',finalproductCtrl.showresults);
+router.delete('/delete/:id', finalproductCtrl.deleteProduct);
 
 
 

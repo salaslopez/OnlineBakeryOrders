@@ -82,7 +82,6 @@ exports.updateProduct = function(req, res){
     article.quantity = req.body.quantity;
     article.unit = req.body.unit;
 console.log(article);
-//var checkId = {_id: new mongodb.ObjectID(req.params.id)};
     var checkId = {_id: req.params.id};
     console.log(checkId);
 
@@ -103,6 +102,18 @@ exports.deleteFinalProduct = function(req, res){
         }
         res.json(finalproducts);
     });
+};
+
+exports.deleteProduct = function(req, res){
+//var checkId = {_id: new mongodb.ObjectID(req.params.id)};
+var checkId = {_id: req.params.id};
+FinalProduct.remove(checkId, function(err){
+    if(err){
+        console.log(err);
+    }
+    res.send('Success')
+})
+
 };
 
 //------------------------------Find by  ID -----------------

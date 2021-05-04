@@ -62,9 +62,9 @@
                                             <p><%=entry.unit%></p>
                                         </th>
                                         <th>
-                                            <button class="btn btn-danger" style="padding: 8px;" type="submit">Delete</button>
+                                            <a class="btn btn-danger delete-product" style="padding: 8px;" href="/" data-id = "<%= entry._id%>">Delete</a>
                                         <th>
-                                            <button class="btn btn-default" style="padding: 8px;" type="submit"><a href="/article/edit/<%= entry._id%>">Update</a></button>
+                                            <button class="btn btn-info" style="padding: 8px;" type="submit"><a href="/article/edit/<%= entry._id%>">Update</a></button>
                                         </th>
                                     </tr>
                                     <%});%>
