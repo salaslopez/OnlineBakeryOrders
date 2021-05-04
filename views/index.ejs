@@ -28,7 +28,6 @@
                             <h4>Bakery database...</h4>
                             <table>
                                 <tr>
-                                    <th>Ordered</th>
                                     <th>_id</th>
                                     <th>Section</th>
                                     <th>Item</th>
@@ -40,7 +39,6 @@
                                 <tbody id="bakeryDB">
                                     <% allproducts.forEach(function(entry) {%>
                                     <tr id="mostWanted<%=entry.mostWanted%>">
-                                        <th><input type="checkbox" id="orderedcheckbox"></th>
                                         <th class="maintableinput">
                                             <p><%= entry._id%></p>
                                         </th>
@@ -64,7 +62,7 @@
                                         <th>
                                             <a class="btn btn-danger delete-product" style="padding: 8px;" href="/" data-id = "<%= entry._id%>">Delete</a>
                                         <th>
-                                            <button class="btn btn-info" style="padding: 8px;" type="submit"><a href="/article/edit/<%= entry._id%>">Update</a></button>
+                                            <button class="btn btn-info" style="padding: 8px;" type="submit"><a href="/finalproduct/edit/<%= entry._id%>">Update</a></button>
                                         </th>
                                     </tr>
                                     <%});%>
@@ -90,91 +88,28 @@
                             <div>
                                 <input class="form-control mt-3" id="search" type="text" placeholder="Write here">
                             </div>
-
-
-                            <form>
-                                <!-- Select the ingredient that wants to be order from the list-->
-                                <select class="form-control mt-3" id="mySelect" onchange="myFunction()">
-                                    <option disabled selected value>Select an option</option>
-                                    <option>Flour</option>
-                                    <option>Pie Shell</option>
-                                    <option>Buttermilk</option>
-                                    <option>Apple</option>
-                                    <option>Eggs</option>
-                                    <option>Unsalted Butter</option>
-                                </select>
-                                <!--To calculate the total of the ingredient needed to order -->
-                                <!-- Press the button to fill an order and go to the order section-->
-                                <a class="btn btn-block" class="style=" padding: 0%; href="#preorder">
-                                    <input class="btn btn-block btn-info" type="button" name="btnCalcBill"
-                                        value="Create Pre-Order" id="calcBill">
-                                </a>
-                            </form>
                         </div>
                         <!-- If the user want to add a final product... -->
-                        <!-- Bakery Delete/Add section -->
-                        <h4>Here to add/delete final products to the table.</h4>
-                        <form method="POST" action="/arcticles/add">
+                        <!-- Bakery Add section -->
+                        
+                        <form method="POST" action="/finalproduct/add">
 
                             <!-- Select a section where the new finalProduct will be put -->
                             <input class="form-control mt-3" id="search" type="search" name="section" placeholder="Section">
                             <input class="form-control mt-3" id="search" type="mostWanted" name="mostwanted" 
-                                placeholder="Is it popular? False/True">
+                                placeholder="Is it popular? false/true">
                             <!-- Type the name, ingredient and quantity-->
                             <input class="form-control mt-3" type="text" name="item" placeholder="Item">
                             <input class="form-control mt-3" type="text" name="ingredient" placeholder="Ingredient">
                             <input class="form-control mt-3" type="text" name="quantity" placeholder="Quantity">
                             <input class="form-control mt-3" type="unit" name="unit" placeholder="Unit">
                             <input type="submit" class="btn btn-success btn-block createproduct" value="Add a product">
-                            <p class="text-muted text-center">To delete an finalProduct, click the required row
-                                first</p>
-                            <button id="delete" class=" btn btn-danger btn-block">Delete a final
-                                product</button>
-
                         </form>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="preorder" class="padd-section text-center">
-            <div class="container" data-aos="fade-up">
-                <div class="section-title text-center">
-
-                    <h2>Pre Order</h2>
-                    <p class="separator">This are the ingredientes that need to be order to bake the orders.</p>
-
-                </div>
-            </div>
-            <div class="container" data-aos="fade-up">
-
-                <div class="row" data-aos="fade-up" data-aos-delay="100">
-
-                    <div class="col-md-8 col-lg-7">
-                        <div class="block-pricing">
-                            <div class="table">
-                                <h4>This is the pre-order for the supplier of:</h4>
-                                <h2 id="ingredient"></h2>
-
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <form></form>
-                                        <input type="number" class="form-control" aria-label="Total" id="totalOrdered">
-                                        </form>
-                                        <p>GRMS</p>
-                                    </li>
-
-                                </ul>
-                                <!-- Press the button to print the order -->
-                                <div class="table_btn">
-                                    <a onclick="window.print()" href="#" class="btn btn-pricing"
-                                        style="background: #71c55d;"><i class="fa fa-shopping-cart"></i> Order Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
 
         </section>
     </main>
