@@ -5,7 +5,7 @@ router = express.Router();
 
 var finalproductCtrl = require('./finalproduct-controller');
 
-//---------------router to change the DB manually ------------------------------
+//---------------routers to change the DB manually ------------------------------
 router.post('/finalproducts', finalproductCtrl.createFinalProduct);//Complement the end of the URL to create a new record
 //This will show the items with the ingredient chosen
 router.get('/finalproducts/:ingredient', finalproductCtrl.getFinalProduct);
@@ -13,7 +13,7 @@ router.put('/finalproducts/:id', finalproductCtrl.updateFinalProduct);
 router.delete('/finalproducts/:id', finalproductCtrl.deleteFinalProduct);
 router.delete('/delete/:id', finalproductCtrl.deleteProduct);
 
-//--------- router to change the database dynamically trough API/MongoDB Atlas ---------------------------------
+//--------- routers to change the database dynamically trough API/MongoDB Atlas ---------------------------------
 //Show all the products in the inicial website
 router.get('/', finalproductCtrl.index);
 //It is used in the index to see all the database

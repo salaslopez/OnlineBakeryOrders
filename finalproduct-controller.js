@@ -70,7 +70,7 @@ exports.updateFinalProduct = function (req, res) {
 
 
 
-//----------- full commands that change the database in MongoDB Atlas with an API & WebSite
+//----------- full funtionality (commands) that change the database in MongoDB Atlas with an API & WebSite
 //Capture all the data in DB
 exports.index = async function (req, res) {
     const allproducts = await FinalProduct.find();
