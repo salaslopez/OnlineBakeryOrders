@@ -1,5 +1,5 @@
 # Online Bakery Orders project
-The main purpose of the application is to help a baker order supplies for the orders received by clients in the Bakery Shop.
+The main purpose of the application is to help a baker to order supplies from the orders received by clients in the Bakery Shop.
 
 The tools used to develop this application were:
 - MongoDB
