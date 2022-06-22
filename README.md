@@ -1,9 +1,10 @@
 # Online Bakery Orders project
-The main purpose of the application is helpinga baker to order supplies for the orders received by clients in the Bakery Shop.
+The main purpose of the application is to help a baker order supplies for the orders received by clients in the Bakery Shop.
 
 The tools used to develop this application were:
 - MongoDB
 - Mongoose
+- Heroku
 - EJS
 - JavaScript
 - GitPod
@@ -13,4 +14,4 @@ The tools used to develop this application were:
 - Dotenv
 - to mention some.
 
-For a presentation of the application refers to the video 
+For a presentation of the application refers to the [video](https://youtu.be/Vw7yyQhqdxg)
